@@ -1,0 +1,523 @@
+/* =========================================
+   BRAND COLLABZ - HERO SLIDER
+   Font: Manrope
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+
+/* =========================================
+   MAIN WRAPPER
+   ========================================= */
+
+.bc-spotlight {
+  width: 100%;
+  position: relative;
+  margin: 0 0 30px;
+  font-family: "Manrope", sans-serif;
+}
+
+
+/* =========================================
+   MAIN BANNER  (taller than before: 335px -> 420px)
+   ========================================= */
+
+.bc-hero {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 17px;
+  background: #f7f6f3;
+  isolation: isolate;
+}
+
+
+/* =========================================
+   SLIDES
+   ========================================= */
+
+.bc-slide {
+  position: absolute;
+  inset: 0;
+
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  width: 100%;
+  height: 100%;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity 1.2s ease-in-out,
+    visibility 1.2s ease-in-out;
+}
+
+.bc-slide.bc-active {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  z-index: 2;
+}
+
+
+/* =========================================
+   LEFT TEXT SECTION
+   Left padding 25px = sidebar border (1px) + sidebar padding (24px),
+   so hero text and sidebar content share one left line.
+   ========================================= */
+
+.bc-copy {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 36px 34px 44px 25px;
+
+  background: #f7f6f3;
+
+  position: relative;
+  z-index: 2;
+}
+
+.bc-copy-inner {
+  width: 100%;
+  max-width: 620px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Keeps the button in the same place on every slide */
+.bc-text-content {
+  width: 100%;
+  min-height: 262px;
+}
+
+
+/* =========================================
+   MAIN HEADING
+   ========================================= */
+
+.bc-copy h1 {
+  margin: 0 0 14px;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(29px, 2.9vw, 42px);
+  font-weight: 600;
+
+  line-height: 1.18;
+  letter-spacing: -1.2px;
+
+  color: #17191f;
+}
+
+.bc-copy h1 span {
+  display: block;
+  margin-top: 3px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================
+   SLIDE ACCENT COLOURS (headline highlight + ticks)
+   ========================================= */
+
+.bc-theme-brand .bc-copy,
+.bc-theme-campaign .bc-copy,
+.bc-theme-creator .bc-copy {
+  background: #f7f6f3;
+}
+
+.bc-theme-brand    { --bc-accent: #786052; }
+.bc-theme-campaign { --bc-accent: #cf252b; }
+.bc-theme-creator  { --bc-accent: #c56c88; }
+
+.bc-copy h1 span {
+  color: var(--bc-accent);
+}
+
+
+/* =========================================
+   DESCRIPTION
+   ========================================= */
+
+.bc-copy p {
+  max-width: 560px;
+
+  margin: 0;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+
+  line-height: 1.7;
+  letter-spacing: 0;
+
+  color: #62656c;
+}
+
+
+/* =========================================
+   KEY POINTS
+   ========================================= */
+
+.bc-points {
+  list-style: none;
+
+  margin: 16px 0 0;
+  padding: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.bc-points li {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  color: #3f4249;
+}
+
+.bc-points svg {
+  flex-shrink: 0;
+  color: var(--bc-accent);
+}
+
+
+/* =========================================
+   BUTTON POSITION - SAME ON ALL SLIDES
+   ========================================= */
+
+.bc-action {
+  display: flex;
+  align-items: center;
+
+  margin-top: 22px;
+  min-height: 46px;
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+.bc-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 150px;
+  min-height: 46px;
+  padding: 0 16px;
+
+  box-sizing: border-box;
+
+  background: #171717;
+  color: #ffffff;
+
+  border-radius: 8px;
+  border: 1px solid #171717;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition:
+    background 250ms ease,
+    color 250ms ease,
+    transform 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.bc-button:hover {
+  background: #383838;
+  color: #ffffff;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   RIGHT IMAGE SECTION
+   ========================================= */
+
+.bc-visual {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #e8e7e5;
+}
+
+.bc-main-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1.035);
+
+  transition: transform 5s ease;
+}
+
+.bc-active .bc-main-image {
+  transform: scale(1);
+}
+
+
+/* =========================================
+   TWO IMAGE LAYOUT - CAMPAIGN SLIDE
+   ========================================= */
+
+.bc-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+.bc-duo-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bc-duo-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transform: scale(1);
+
+  transition: transform 5s ease;
+}
+
+.bc-active .bc-duo-image {
+  transform: scale(1.025);
+}
+
+.bc-duo-frame:first-child .bc-duo-image {
+  border-right: 2px solid #ffffff;
+  object-position: center 25%;
+}
+
+.bc-duo-frame:last-child .bc-duo-image {
+  object-position: center 35%;
+}
+
+
+/* =========================================
+   TEXT TRANSITION
+   ========================================= */
+
+.bc-active .bc-copy-inner {
+  animation: bcTextEnter 750ms ease both;
+}
+
+@keyframes bcTextEnter {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================
+   DOT NAVIGATION
+   ========================================= */
+
+.bc-pagination {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 9px;
+  padding-top: 14px;
+}
+
+.bc-pagination-dot {
+  width: 8px;
+  height: 8px;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 20px;
+
+  background: #c9c6c1;
+
+  cursor: pointer;
+
+  transition:
+    width 300ms ease,
+    background 300ms ease;
+}
+
+.bc-pagination-dot.bc-dot-active {
+  width: 25px;
+  background: #242424;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+  .bc-hero {
+    height: 400px;
+  }
+
+  .bc-copy {
+    padding: 28px 24px 40px 25px;
+  }
+
+  .bc-text-content {
+    min-height: 236px;
+  }
+
+  .bc-copy h1 {
+    font-size: 28px;
+    letter-spacing: -0.8px;
+  }
+
+  .bc-copy p {
+    font-size: 13px;
+  }
+
+  .bc-points li {
+    font-size: 12px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .bc-hero {
+    height: auto;
+    min-height: 0;
+    border-radius: 13px;
+  }
+
+  .bc-slide {
+    grid-template-columns: 1fr;
+    grid-template-rows: 220px auto;
+
+    position: absolute;
+    height: auto;
+    min-height: 100%;
+  }
+
+  .bc-slide.bc-active {
+    position: relative;
+  }
+
+  .bc-copy {
+    grid-row: 2;
+    padding: 22px 23px 45px;
+  }
+
+  .bc-copy-inner {
+    max-width: none;
+  }
+
+  .bc-text-content {
+    min-height: 0;
+  }
+
+  .bc-copy h1 {
+    font-size: 25px;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+  }
+
+  .bc-copy p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .bc-points {
+    margin-top: 14px;
+    gap: 8px;
+  }
+
+  .bc-points li {
+    font-size: 12.5px;
+  }
+
+  .bc-action {
+    margin-top: 16px;
+  }
+
+  .bc-visual {
+    grid-row: 1;
+    height: 220px;
+  }
+
+  .bc-pagination {
+    padding-top: 12px;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .bc-slide,
+  .bc-main-image,
+  .bc-duo-image,
+  .bc-button,
+  .bc-pagination-dot {
+    transition: none !important;
+    animation: none !important;
+  }
+
+}
